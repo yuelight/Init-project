@@ -1,6 +1,6 @@
-import { readFile, rename } from 'fs';
-import { promisify } from 'util';
-import { resolve } from 'path';
+const { readFile, rename } = require('fs');
+const { promisify } = require('util');
+const { resolve } = require('path');
 
 const readFileSync = async (oldPath, newPath) => {
 	const arr = [];
