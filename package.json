@@ -1,0 +1,24 @@
+{
+	"name": "proj",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "babel-node",
+		"build": "webpack",
+		"eslint": "node_modules/.bin/eslint",		
+		"lint": "node_modules/.bin/eslint --fix",
+		"indent": "editorconfig-tools fix"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.0",
+		"babel-eslint": "^8.2.1",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.1",
+		"eslint": "^4.17.0",
+		"eslint-loader": "^1.9.0",
+		"webpack": "^3.10.0"
+	},
+	"dependencies": {}
+}
