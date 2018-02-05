@@ -1,11 +1,19 @@
-import { readFile } from 'fs';
+import { readFile, rename } from 'fs';
 import { promisify } from 'util';
 import { resolve } from 'path';
 
-const readFileSync = async (path, encoding) => {
-	let data = await promisify(readFile)(path, encoding);
+const readFileSync = async (oldPath, newPath) => {
+	const arr = [];
+
+	await promisify(rename)(oldPath, newPath);
+	let data = await promisify(readFile)(newPath, 'utf8');
 	data = JSON.parse(data);
-	console.log(data.name);
+
+	for (const v in data.devDependencies) {
+		arr.push(v);
+	}
+	console.log(data.scripts);
+	console.log(arr.join(' '));
 };
 
-readFileSync(resolve('package.json'), 'utf8');
+readFileSync(resolve('package.json'), resolve('package-dev.json'));
