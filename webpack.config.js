@@ -15,14 +15,14 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				enforce: 'pre',
 				exclude: /(node_modules|bower_components)/,
-				loader: 'eslint-loader'
+				loader: 'babel-loader'
 			},
 			{
 				test: /\.js$/,
+				enforce: 'pre',
 				exclude: /(node_modules|bower_components)/,
-				loader: 'babel-loader'
+				loader: 'eslint-loader'
 			}
 		]
 	},
